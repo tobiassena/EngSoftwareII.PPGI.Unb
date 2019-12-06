@@ -47,9 +47,13 @@ Now access your browser at http://localhost/autoexp/texteditor to use the tool.
 ## Using ExpRunA
 
 As one of ExpRunA's purposes is to abstract the experiment's configuration, execution and analysis, little information is needed for its use. Basically, it will be necessary to inform the search hypotheses, the dependent variables, the treatments, the objects and the execution command. See an example of using DSL at https://github.com/eneiascs/dsm-experiments-evaluation/blob/master/hylaa/hylaa.exp.
+
 Line 5 to 8 describes all the hypotheses that will be analyzed. Note that in all cases the dependent variable to be tested is time. You can choose the dependent variable you want.
+
 In line 21 is described which instrument will capture the result of the execution of the experiment. In this case, valueExpression is the term that will refer to the dependent variable in this experiment defined as runtime :. Thus, ExpRunA will identify during execution which value it will have after the term defined in the valueExpression, and this value will be identified as the dependent variable.
+
 In lines 28 to 32 you can describe all the possible treatments that your experiment will use. ExpRunA will identify an error if there is a hypothesis referencing a treatment or dependent variable that is not specified.
 Line 76 specifies the command that will be executed by ExpRunA. In this command you can pass parameters to the defined treatments or objects as needed.
+
 After specifying all the experiment information, you can perform the script generation and execution by right-clicking on the specification file and selecting Generate and Run.
 
