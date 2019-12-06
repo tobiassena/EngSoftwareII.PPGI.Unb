@@ -32,7 +32,7 @@ If your experiment needs to extend the original image, you will need to change t
 ![alttext](https://github.com/tobiassena/EngSoftwareII.PPGI.Unb/blob/master/images/img3.png)
 
 
-Now, to run ExpRunA just use the docker-compose up command to upload all containers.
+Now, to run ExpRunA just use the *docker-compose up* command to upload all containers.
 Some errors may occur as you will need to clear all ports used by the containers. The most common is that used by mysql. In this case, use the command *ps aux | grep mysql* to find out the number of the process your computer is running mysql on. Then kill the process with the *sudo kill XX* command (XX is the process number). In addition, it is also necessary to edit the .env file, changing the directory where the files will be stored locally and setting the configuration of the CPUs used by the containers. You can now rerun the *docker-compose up* command.
 After using the docker-compose up command, you can verify that all containers required for execution are active by using the docker stats command.
 
@@ -50,7 +50,7 @@ As one of ExpRunA's purposes is to abstract the experiment's configuration, exec
 
 Line 5 to 8 describes all the hypotheses that will be analyzed. Note that in all cases the dependent variable to be tested is time. You can choose the dependent variable you want.
 
-In line 21 is described which instrument will capture the result of the execution of the experiment. In this case, valueExpression is the term that will refer to the dependent variable in this experiment defined as runtime :. Thus, ExpRunA will identify during execution which value it will have after the term defined in the valueExpression, and this value will be identified as the dependent variable.
+In line 21 is described which instrument will capture the result of the execution of the experiment. In this case, valueExpression is the term that will refer to the dependent variable in this experiment defined as *runtime:*. Thus, ExpRunA will identify during execution which value it will have after the term defined in the valueExpression, and this value will be identified as the dependent variable.
 
 In lines 28 to 32 you can describe all the possible treatments that your experiment will use. ExpRunA will identify an error if there is a hypothesis referencing a treatment or dependent variable that is not specified.
 Line 76 specifies the command that will be executed by ExpRunA. In this command you can pass parameters to the defined treatments or objects as needed.
